@@ -1,0 +1,70 @@
+.projects { background: var(--bg-secondary); }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+/* ── Card ────────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: box-shadow 300ms ease, border-color 300ms ease, transform 300ms ease;
+}
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 20px 56px var(--glow), 0 0 0 1px var(--accent);
+}
+
+.topBar { height: 3px; width: 100%; }
+
+/* ── Preview panel ───────────────────────────────────────────── */
+.preview {
+  height: 210px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 32px;
+  position: relative; overflow: hidden;
+}
+/* Subtle inner top-shadow so preview fades into card body */
+.preview::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0; height: 32px;
+  background: linear-gradient(to bottom, transparent, var(--bg-card));
+  pointer-events: none;
+}
+
+/* ── Card body ───────────────────────────────────────────────── */
+.body { padding: 20px 24px 24px; }
+.titleRow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+.title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--text-primary); }
+.accentBadge {
+  padding: 3px 10px; border-radius: 100px; border: 1px solid;
+  font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+}
+.tagline {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 9px; letter-spacing: 0.01em;
+}
+.desc { font-size: 0.87rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 16px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+
+.actions { display: flex; align-items: center; gap: 12px; }
+.ghLink {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-muted);
+  transition: color var(--tr-normal), border-color var(--tr-normal), box-shadow var(--tr-normal);
+}
+.ghLink:hover {
+  color: var(--green); border-color: var(--green);
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; gap: 20px; } }
+@media (max-width: 480px) {
+  .preview { height: 170px; padding: 18px 20px; }
+  .body    { padding: 16px 18px 20px; }
+}

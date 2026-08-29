@@ -1,0 +1,237 @@
+.hero {
+  min-height: 100dvh;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--nav-h) + 48px) 0 80px;
+  position: relative; z-index: 1;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 56px;
+  align-items: center;
+}
+/* ── Left ── */
+.content { display: flex; flex-direction: column; gap: 0; }
+.greeting {
+  font-family: var(--font-body);
+  font-size: 1rem; font-weight: 500; letter-spacing: 0.05em;
+  color: var(--text-muted); margin-bottom: 10px;
+}
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 900; line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+.nameAccent { color: var(--blue); }
+.roleRow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.roleDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--red); box-shadow: 0 0 10px var(--red-glow);
+  animation: pulse 2s ease-in-out infinite;
+}
+.role {
+  font-family: var(--font-heading);
+  font-size: 1.15rem; font-weight: 600; color: var(--text-secondary);
+}
+.tagline {
+  font-family: var(--font-heading);
+  font-size: 1.05rem; font-weight: 500; font-style: italic;
+  color: var(--text-muted); margin-bottom: 18px; line-height: 1.5;
+  border-left: 2px solid var(--border-medium); padding-left: 16px;
+}
+.bio {
+  font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);
+  margin-bottom: 36px; max-width: 480px;
+}
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.socials { display: flex; gap: 12px; }
+.socialBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-medium);
+  color: var(--text-muted);
+  transition: color var(--tr-normal), border-color var(--tr-normal), box-shadow var(--tr-normal);
+}
+.socialBtn:hover { color: var(--blue); border-color: var(--blue); box-shadow: 0 0 14px var(--blue-glow); }
+
+/* ── Right: Profile Card ── */
+.cardWrap {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.deco {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+.decoTL { width: 18px; height: 18px; background: var(--red);    top: -10px;  left: 14%;  box-shadow: 0 0 12px var(--red-glow);    animation: float 3.8s ease-in-out infinite; }
+.decoTR { width: 13px; height: 13px; background: var(--blue);   top: 8px;    right: 12%; border-radius: 3px; box-shadow: 0 0 10px var(--blue-glow);   animation: float 4.4s ease-in-out infinite reverse; }
+.decoBL { width: 10px; height: 10px; background: var(--green);  bottom: 18%; left: 8%;   box-shadow: 0 0 10px var(--green-glow);  animation: float 3.2s ease-in-out infinite; }
+.decoBR { width: 16px; height: 16px; background: var(--yellow); bottom: 6%;  right: 16%; box-shadow: 0 0 12px var(--yellow-glow); animation: float 5s ease-in-out infinite reverse; border-radius: 3px; }
+
+.profileCard {
+  position: relative;
+  width: 310px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 0 0 2px rgba(68,136,255,0.35),
+    0 0 0 4px rgba(68,221,136,0.15),
+    0 24px 64px rgba(0,0,0,0.7),
+    0 0 40px rgba(68,136,255,0.1);
+  transition: box-shadow 300ms ease;
+  cursor: default;
+  animation: borderRotate 6s linear infinite;
+}
+.profileCard:hover {
+  box-shadow:
+    0 0 0 2px rgba(68,136,255,0.6),
+    0 0 0 4px rgba(255,68,85,0.2),
+    0 32px 80px rgba(0,0,0,0.8),
+    0 0 60px rgba(68,136,255,0.2);
+}
+.glare {
+  position: absolute; inset: 0; z-index: 3;
+  pointer-events: none; border-radius: inherit;
+  transition: background 100ms ease;
+}
+.photoWrap {
+  width: 100%; aspect-ratio: 1/1; overflow: hidden;
+}
+.photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+  transition: transform 400ms ease;
+}
+.profileCard:hover .photo { transform: scale(1.03); }
+.cardInfo {
+  padding: 18px 20px 20px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cardName {
+  font-family: var(--font-heading);
+  font-size: 1.05rem; font-weight: 700; color: var(--text-primary);
+}
+.cardRole {
+  font-size: 0.82rem; font-weight: 500; color: var(--text-muted);
+}
+.cardDots { display: flex; gap: 6px; margin-top: 10px; }
+.cardDots span { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Scroll hint */
+.scrollHint {
+  position: absolute; bottom: 32px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--text-muted); font-size: 0.68rem; letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.scrollLine {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--blue));
+  animation: scrollDrop 1.8s ease-in-out infinite;
+}
+
+/* Keyframes */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 6px var(--red-glow); }
+  50%       { box-shadow: 0 0 16px var(--red-glow), 0 0 28px var(--red-glow); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes scrollDrop {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+@keyframes borderRotate {
+  0%   { box-shadow: 0 0 0 2px rgba(68,136,255,0.4), 0 0 0 4px rgba(68,221,136,0.12), 0 24px 64px rgba(0,0,0,0.7); }
+  25%  { box-shadow: 0 0 0 2px rgba(255,68,85,0.4), 0 0 0 4px rgba(68,136,255,0.12), 0 24px 64px rgba(0,0,0,0.7); }
+  50%  { box-shadow: 0 0 0 2px rgba(68,221,136,0.4), 0 0 0 4px rgba(255,68,85,0.12), 0 24px 64px rgba(0,0,0,0.7); }
+  75%  { box-shadow: 0 0 0 2px rgba(255,204,68,0.4), 0 0 0 4px rgba(68,221,136,0.12), 0 24px 64px rgba(0,0,0,0.7); }
+  100% { box-shadow: 0 0 0 2px rgba(68,136,255,0.4), 0 0 0 4px rgba(255,204,68,0.12), 0 24px 64px rgba(0,0,0,0.7); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid { gap: 40px; }
+  .profileCard { width: 280px; }
+}
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+  .content { order: 1; align-items: center; text-align: center; }
+  .cardWrap { order: 0; }
+  .tagline { border-left: none; padding-left: 0; text-align: center; }
+  .bio { max-width: 520px; text-align: center; }
+  .ctas { justify-content: center; }
+  .socials { justify-content: center; }
+  .profileCard { width: 260px; }
+}
+@media (max-width: 480px) {
+  .hero { padding: calc(var(--nav-h) + 32px) 0 60px; }
+  .name { font-size: clamp(2.4rem, 10vw, 3rem); }
+  /* Hide the full card column — compact card shows below text */
+  .cardWrap { display: none; }
+  .ctas { flex-direction: column; width: 100%; }
+  .ctas .btn { width: 100%; justify-content: center; }
+  .scrollHint { display: none; }
+}
+
+/* ── Compact mobile profile card ───────────────────────────── */
+.mobileCard {
+  display: none; /* hidden by default */
+}
+@media (max-width: 480px) {
+  .mobileCard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px auto 0;
+    padding: 14px 18px;
+    max-width: 320px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow:
+      0 0 0 1.5px rgba(68,136,255,0.3),
+      0 8px 24px rgba(0,0,0,0.5);
+  }
+  .mobilePhoto {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(68,136,255,0.4);
+  }
+  .mobileCardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .mobileCardName {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .mobileCardRole {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+}

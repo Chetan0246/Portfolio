@@ -1,0 +1,94 @@
+/* ── PrivChat Preview ───────────────────────────────────────────── */
+.privchat {
+  background: linear-gradient(145deg, #0a1a10 0%, #071210 100%);
+  border-bottom: 1px solid rgba(68,221,136,0.12);
+}
+.privLock {
+  font-size: 2.4rem;
+  animation: lockPulse 2.5s ease-in-out infinite;
+  margin-bottom: 16px; display: block;
+}
+.bubbleRow { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.bubble {
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 0.65rem; font-weight: 600;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.04em;
+  max-width: 75%;
+  filter: blur(3px);
+  color: rgba(255,255,255,0.7);
+}
+.bubbleLeft  { background: rgba(68,221,136,0.18); border: 1px solid rgba(68,221,136,0.3); align-self: flex-start; animation: slideInLeft 0.5s ease forwards, cipherFlicker 3s ease-in-out infinite; }
+.bubbleRight { background: rgba(68,136,255,0.18); border: 1px solid rgba(68,136,255,0.3);  align-self: flex-end;   animation: slideInRight 0.5s 0.2s ease forwards, cipherFlicker 3.4s ease-in-out infinite; }
+.privDots { display: flex; gap: 5px; align-items: center; margin-top: 10px; }
+.privDot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+  animation: dotPulse 1.6s ease-in-out infinite;
+}
+.privDot:nth-child(2) { animation-delay: 0.3s; background: var(--blue); }
+.privDot:nth-child(3) { animation-delay: 0.6s; background: var(--green); }
+
+/* ── FocusSync Preview ──────────────────────────────────────────── */
+.focussync {
+  background: linear-gradient(145deg, #0a0e1a 0%, #06080f 100%);
+  border-bottom: 1px solid rgba(68,136,255,0.12);
+}
+.timerRing {
+  width: 72px; height: 72px;
+  flex-shrink: 0;
+}
+.timerBg  { fill: none; stroke: rgba(68,136,255,0.15); stroke-width: 5; }
+.timerArc {
+  fill: none; stroke: var(--blue); stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 188;
+  stroke-dashoffset: 47;
+  transform: rotate(-90deg); transform-origin: 36px 36px;
+  animation: timerTick 8s linear infinite;
+}
+.timerLabel { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; fill: var(--blue); text-anchor: middle; }
+.heatRow { display: flex; gap: 3px; }
+.heatDot {
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--blue);
+}
+.heatRow:nth-child(1) .heatDot:nth-child(odd)  { opacity: 0.8; }
+.heatRow:nth-child(1) .heatDot:nth-child(even) { opacity: 0.3; }
+.heatRow:nth-child(2) .heatDot { opacity: 0.5; }
+.heatRow:nth-child(2) .heatDot:nth-child(3) { opacity: 0.9; }
+.heatRow:nth-child(3) .heatDot:nth-child(1) { opacity: 0.2; }
+.heatRow:nth-child(3) .heatDot:nth-child(2) { opacity: 0.7; }
+.heatRow:nth-child(3) .heatDot:nth-child(3) { opacity: 0.4; }
+.heatRow:nth-child(3) .heatDot:nth-child(4) { opacity: 0.95; }
+.heatRow:nth-child(3) .heatDot:nth-child(5) { opacity: 0.6; }
+.leaderRow {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 0; border-bottom: 1px solid var(--border-subtle);
+}
+.leaderRank { font-size: 0.65rem; font-weight: 700; color: var(--yellow); width: 14px; }
+.leaderBar { height: 4px; border-radius: 2px; background: var(--blue-dim); flex: 1; overflow: hidden; }
+.leaderFill { height: 100%; background: var(--blue); border-radius: 2px; animation: barGrow 2s ease-in-out infinite alternate; }
+.leaderScore { font-size: 0.6rem; color: var(--text-muted); font-weight: 600; }
+
+/* ── Keyframes ─────────────────────────────────────────────────── */
+@keyframes lockPulse {
+  0%,100% { filter: drop-shadow(0 0 4px rgba(68,221,136,0.4)); }
+  50%      { filter: drop-shadow(0 0 16px rgba(68,221,136,0.8)); }
+}
+@keyframes slideInLeft  { from { opacity:0; transform: translateX(-8px); } to { opacity:1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity:0; transform: translateX(8px);  } to { opacity:1; transform: translateX(0); } }
+@keyframes cipherFlicker {
+  0%,100% { filter: blur(3px); } 40% { filter: blur(2px); } 60% { filter: blur(4px); }
+}
+@keyframes dotPulse {
+  0%,100% { transform: scale(1); opacity:0.6; }
+  50%      { transform: scale(1.5); opacity:1; }
+}
+@keyframes timerTick {
+  from { stroke-dashoffset: 188; }
+  to   { stroke-dashoffset: 0;   }
+}
+@keyframes barGrow {
+  from { width: 40%; } to { width: 85%; }
+}

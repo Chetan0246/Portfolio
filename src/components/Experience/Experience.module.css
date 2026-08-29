@@ -1,0 +1,132 @@
+.experience { background: var(--bg-primary); }
+
+/* ── Sub-section ───────────────────────────────────────────── */
+.subSection { margin-bottom: 56px; }
+.subSection:last-child { margin-bottom: 0; }
+
+.subHeader {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.subDot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.subDot.red    { background: var(--red);    box-shadow: 0 0 8px var(--red-glow); }
+.subDot.blue   { background: var(--blue);   box-shadow: 0 0 8px var(--blue-glow); }
+.subDot.yellow { background: var(--yellow); box-shadow: 0 0 8px var(--yellow-glow); }
+
+.subTitle {
+  font-family: var(--font-heading);
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ── Coding Profiles ───────────────────────────────────────── */
+.profileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.profileCard {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 44px 20px 20px;   /* right padding for arrow */
+  box-shadow: var(--shadow-card);
+  position: relative;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+  cursor: pointer;
+}
+.profileCard.blue:hover   { border-color: var(--blue);   box-shadow: 0 8px 28px var(--blue-glow); }
+.profileCard.yellow:hover { border-color: var(--yellow); box-shadow: 0 8px 28px var(--yellow-glow); }
+
+.profileIconWrap {
+  width: 44px; height: 44px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.profileCard.blue .profileIconWrap   { background: var(--blue-dim);   color: var(--blue); }
+.profileCard.yellow .profileIconWrap { background: var(--yellow-dim); color: var(--yellow); }
+
+.profileText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.profileName   { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.profileHandle { font-size: 0.75rem; color: var(--text-muted); }
+.profileDesc   { font-size: 0.73rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.profileArrow  { position: absolute; top: 50%; right: 18px; transform: translateY(-50%); font-size: 0.85rem; color: var(--text-muted); }
+
+/* ── Certifications ────────────────────────────────────────── */
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+.certCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--yellow);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  display: flex; flex-direction: column; gap: 6px;
+  box-shadow: var(--shadow-card);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.certCard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px var(--yellow-glow); }
+.certIcon   { font-size: 1.5rem; margin-bottom: 2px; }
+.certTitle  { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+.certIssuer { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ── Achievements ──────────────────────────────────────────── */
+.achList { display: flex; flex-direction: column; gap: 12px; }
+
+.achCard {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--red);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-card);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.achCard:hover { transform: translateX(5px); box-shadow: 0 4px 20px var(--red-glow); }
+
+.achIconWrap {
+  width: 40px; height: 40px; border-radius: var(--radius-md);
+  background: var(--red-dim); display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.achBody   { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.achTitle  { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.achMeta   { font-size: 0.75rem; color: var(--text-muted); }
+.achDesc   { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+
+/* ── Placeholder ───────────────────────────────────────────── */
+.placeholder {
+  display: flex; align-items: center; gap: 12px;
+  border: 1.5px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  color: var(--text-muted); font-size: 0.85rem;
+  cursor: default;
+  transition: border-color 200ms, opacity 200ms;
+  opacity: 0.6;
+}
+.placeholder:hover { opacity: 0.9; border-color: rgba(255,255,255,0.2); }
+.placeholderWide { min-height: 60px; }
+.placeholderPlus  { font-size: 1.3rem; font-weight: 300; color: var(--text-muted); flex-shrink: 0; }
+.placeholderLabel { font-size: 0.82rem; font-style: italic; }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .profileGrid { grid-template-columns: 1fr; }
+  .certGrid    { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .achCard     { flex-wrap: wrap; }
+}
+@media (max-width: 400px) {
+  .certGrid { grid-template-columns: 1fr; }
+}
