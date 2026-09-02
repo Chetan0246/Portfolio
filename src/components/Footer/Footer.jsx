@@ -1,7 +1,7 @@
 import s from './Footer.module.css';
 
-const NAV = ['About','Skills','Projects','Experience','Education','Contact'];
-const scrollTo = id => document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior:'smooth' });
+const NAV = ['About','Skills','Projects','Experience','Education','Résumé','Contact'];
+const scrollTo = id => document.getElementById(id === 'Résumé' ? 'resume' : id.toLowerCase())?.scrollIntoView({ behavior:'smooth' });
 
 export default function Footer() {
   return (

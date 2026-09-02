@@ -6,6 +6,7 @@ import Skills           from './components/Skills/Skills';
 import Projects         from './components/Projects/Projects';
 import Experience       from './components/Experience/Experience';
 import Education        from './components/Education/Education';
+import Resume           from './components/Resume/Resume';
 import Contact          from './components/Contact/Contact';
 import Footer           from './components/Footer/Footer';
 
@@ -26,6 +27,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Education />
+        <Resume />
         <Contact />
       </main>
 

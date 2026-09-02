@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { id: 'projects',   label: 'Projects',   dot: 'green'  },
   { id: 'experience', label: 'Experience', dot: 'red'    },
   { id: 'education',  label: 'Education',  dot: 'yellow' },
+  { id: 'resume',     label: 'Résumé',     dot: 'red'    },
   { id: 'contact',    label: 'Contact',    dot: 'yellow' },
 ];
 

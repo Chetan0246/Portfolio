@@ -1,0 +1,171 @@
+.resume { background: var(--bg-primary); }
+
+/* ── Two-column layout ───────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 52px;
+  align-items: start;
+}
+
+/* ── Left panel ─────────────────────────────────────────────── */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.tagline {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--red);
+  padding-left: 18px;
+}
+
+/* Highlight rows */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  transition: border-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+.highlight:hover {
+  border-color: var(--red);
+  box-shadow: 0 4px 20px var(--red-glow);
+  transform: translateX(4px);
+}
+
+.highlightIcon { font-size: 1.25rem; flex-shrink: 0; margin-top: 1px; }
+
+.highlightLabel {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
+}
+.highlightValue {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Buttons row */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.downloadBtn {
+  gap: 10px;
+}
+.downloadBtn:hover svg {
+  transform: translateY(3px);
+  transition: transform 250ms ease;
+}
+
+.updated {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── PDF preview ─────────────────────────────────────────────── */
+.previewWrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow:
+    0 0 0 1px rgba(255,68,85,0.15),
+    0 24px 64px rgba(0,0,0,0.6);
+  aspect-ratio: 210 / 297;  /* A4 proportion */
+  transition: box-shadow 300ms ease;
+}
+.previewWrap:hover {
+  box-shadow:
+    0 0 0 1.5px var(--red),
+    0 24px 64px rgba(0,0,0,0.6);
+}
+
+/* Corner accent marks */
+.corner {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: var(--red);
+  border-style: solid;
+  z-index: 2;
+  pointer-events: none;
+}
+.cornerTL { top: 0; left: 0;  border-width: 2px 0 0 2px; border-radius: var(--radius-sm) 0 0 0; }
+.cornerTR { top: 0; right: 0; border-width: 2px 2px 0 0; border-radius: 0 var(--radius-sm) 0 0; }
+.cornerBL { bottom: 0; left: 0;  border-width: 0 0 2px 2px; border-radius: 0 0 0 var(--radius-sm); }
+.cornerBR { bottom: 0; right: 0; border-width: 0 2px 2px 0; border-radius: 0 0 var(--radius-sm) 0; }
+
+.pdfFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
+/* Mobile overlay — hides iframe, shows tap-to-open on small screens */
+.mobileOverlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: var(--bg-card);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  z-index: 3;
+}
+.mobileOverlayIcon { font-size: 3rem; }
+.mobileOverlayText {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* Show PDF preview above panel on tablet */
+  .previewWrap { order: -1; max-height: 560px; aspect-ratio: auto; height: 560px; }
+}
+
+@media (max-width: 600px) {
+  /* Hide iframe on mobile — show overlay tap button instead */
+  .pdfFrame { display: none; }
+  .mobileOverlay { display: flex; }
+  .previewWrap { height: 200px; aspect-ratio: auto; }
+
+  .actions { flex-direction: column; }
+  .actions .btn { width: 100%; justify-content: center; }
+  .tagline { font-size: 0.92rem; }
+}
