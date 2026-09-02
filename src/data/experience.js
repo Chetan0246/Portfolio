@@ -8,20 +8,29 @@ export const codingProfiles = [
   {
     id: 'github',
     name: 'GitHub',
-    handle: '@moorthychetan',
+    handle: '@Chetan0246',
     description: 'Open-source projects & contributions',
-    url: 'https://github.com/moorthychetan',
+    url: 'https://github.com/Chetan0246',
     color: 'blue',
     icon: 'github',
   },
   {
     id: 'leetcode',
     name: 'LeetCode',
-    handle: 'moorthychetan',
+    handle: '@moorthy-chetan',
     description: 'Algorithms & problem solving',
-    url: 'https://leetcode.com',
+    url: 'https://leetcode.com/u/moorthy-chetan/',
     color: 'yellow',
     icon: 'leetcode',
+  },
+  {
+    id: 'hackerrank',
+    name: 'HackerRank',
+    handle: '@moorthychetan06',
+    description: 'Coding challenges & skill badges',
+    url: 'https://www.hackerrank.com/profile/moorthychetan06',
+    color: 'green',
+    icon: 'hackerrank',
   },
 ];
 

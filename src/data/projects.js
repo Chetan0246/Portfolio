@@ -15,7 +15,7 @@ export const projects = [
       'Real-time messaging with Socket.IO + Google OAuth via passport-google-oauth20',
     ],
     architecture: 'The backend is architecturally zero-knowledge. PostgreSQL stores only ciphertext, initialization vectors, and per-recipient encrypted message keys. Public keys sync to the server; private keys live exclusively in IndexedDB on the user\'s device and are never transmitted.',
-    github: 'https://github.com/moorthychetan',
+    github: 'https://github.com/Chetan0246',
     live: null,
   },
   {
@@ -34,7 +34,7 @@ export const projects = [
       'React + React Router frontend with Node.js/Express and Mongoose session persistence',
     ],
     architecture: 'Timer state is owned and broadcast by the server, not clients — preventing drift and ensuring synchronization regardless of join time. Focus scores are computed server-side from Page Visibility events, making them tamper-resistant.',
-    github: 'https://github.com/moorthychetan',
+    github: 'https://github.com/Chetan0246',
     live: null,
   },
 ];

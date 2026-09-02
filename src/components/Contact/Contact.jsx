@@ -16,8 +16,8 @@ const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';    // ← replace
 
 const CONTACTS = [
   { icon: '✉',  label: 'Email',    value: 'moorthychetan06@gmail.com',  href: 'mailto:moorthychetan06@gmail.com', color: 'red'    },
-  { icon: '💼', label: 'LinkedIn', value: 'Connect on LinkedIn',         href: 'https://linkedin.com',            color: 'blue'   },
-  { icon: '🐙', label: 'GitHub',   value: 'github.com/moorthychetan',    href: 'https://github.com/moorthychetan', color: 'green'  },
+  { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/moorthy-chetan', href: 'https://www.linkedin.com/in/moorthy-chetan-38a176325', color: 'blue'   },
+  { icon: '🐙', label: 'GitHub',   value: 'github.com/Chetan0246',         href: 'https://github.com/Chetan0246',                        color: 'green'  },
   { icon: '📞', label: 'Phone',    value: '+91 94415 22812',              href: 'tel:+919441522812',               color: 'yellow' },
 ];
 

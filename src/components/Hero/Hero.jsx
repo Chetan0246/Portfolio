@@ -78,8 +78,8 @@ export default function Hero() {
           </motion.div>
 
           <motion.div className={s.socials} {...(prefersReduced ? {} : fadeUp(0.7))}>
-            <SocialLink href="https://github.com/moorthychetan"      label="GitHub (opens in new tab)"   icon="github"   external />
-            <SocialLink href="https://linkedin.com"                   label="LinkedIn (opens in new tab)" icon="linkedin" external />
+            <SocialLink href="https://github.com/Chetan0246"                                     label="GitHub (opens in new tab)"   icon="github"   external />
+            <SocialLink href="https://www.linkedin.com/in/moorthy-chetan-38a176325" label="LinkedIn (opens in new tab)" icon="linkedin" external />
             <SocialLink href="mailto:moorthychetan06@gmail.com"       label="Send email"                  icon="mail"     />
           </motion.div>
         </div>
