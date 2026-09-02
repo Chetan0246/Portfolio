@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { education } from '../../data/experience';
+import { education, schoolEducation } from '../../data/experience';
 import { fadeUpVariant, scaleInVariant } from '../../hooks/useAnimations';
 import s from './Education.module.css';
 
@@ -21,7 +21,7 @@ export default function Education() {
           <motion.div variants={fadeUpVariant} className="section-line yellow" />
         </motion.div>
 
-        {/* Card */}
+        {/* B.Tech Card */}
         <motion.div
           className={s.card}
           variants={scaleInVariant}
@@ -41,7 +41,7 @@ export default function Education() {
               </div>
               <div className={s.meta}>
                 <span className="tech-badge yellow">{education.period}</span>
-                {education.year && <span className="tech-badge blue">{education.year}</span>}
+                <span className="tech-badge">{education.year}</span>
                 <div className={s.cgpa}>
                   <span className={s.cgpaValue}>{education.cgpa}</span>
                   <span className={s.cgpaLabel}>CGPA</span>
@@ -57,6 +57,27 @@ export default function Education() {
               <span className="tech-badge yellow">CGPA {education.cgpa}</span>
             </div>
           </div>
+        </motion.div>
+
+        {/* School Records */}
+        <motion.div
+          className={s.schoolGrid}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } } }}
+          initial="hidden" whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          {schoolEducation.map((sch) => (
+            <motion.div key={sch.id} variants={fadeUpVariant} className={`${s.schoolCard} ${s[sch.color]}`}>
+              <div className={s.schoolLeft}>
+                <span className={s.schoolLevel}>{sch.level}</span>
+                <span className={s.schoolYear}>{sch.year}</span>
+              </div>
+              <div className={s.schoolScore}>
+                <span className={s.scoreValue}>{sch.score}</span>
+                <span className={s.scoreLabel}>Score</span>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
       </div>

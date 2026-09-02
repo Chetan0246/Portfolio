@@ -29,7 +29,7 @@
 .header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
 .institution { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
 .degree { font-size: 0.9rem; color: var(--text-secondary); }
-.meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.meta { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 .cgpa { text-align: right; }
 .cgpaValue { display: block; font-family: var(--font-heading); font-size: 2rem; font-weight: 900; color: var(--yellow); line-height: 1; text-shadow: 0 0 20px var(--yellow-glow); }
 .cgpaLabel { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; }
@@ -38,6 +38,60 @@
 
 @media (max-width: 600px) {
   .header { flex-direction: column; }
-  .meta { align-items: flex-start; }
+  .meta { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
   .body { padding: 22px 20px; }
+}
+
+/* ── School records grid ─────────────────────────────────────── */
+.schoolGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.schoolCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-card);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+.schoolCard:hover { transform: translateY(-3px); }
+.schoolCard.blue:hover  { border-color: var(--blue);  box-shadow: 0 8px 24px var(--blue-glow); }
+.schoolCard.green:hover { border-color: var(--green); box-shadow: 0 8px 24px var(--green-glow); }
+
+.schoolLeft { display: flex; flex-direction: column; gap: 4px; }
+.schoolLevel {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 700;
+  color: var(--text-primary);
+}
+.schoolYear {
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--text-muted);
+}
+
+.schoolScore { text-align: right; }
+.scoreValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.6rem; font-weight: 900;
+  line-height: 1;
+}
+.scoreLabel {
+  font-size: 0.68rem; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+.schoolCard.blue  .scoreValue { color: var(--blue);  text-shadow: 0 0 16px var(--blue-glow); }
+.schoolCard.green .scoreValue { color: var(--green); text-shadow: 0 0 16px var(--green-glow); }
+
+@media (max-width: 500px) {
+  .schoolGrid { grid-template-columns: 1fr; }
 }

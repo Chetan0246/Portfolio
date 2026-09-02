@@ -48,3 +48,20 @@ export const education = {
   cgpa: '8.34',
   location: 'Vellore, Tamil Nadu',
 };
+
+export const schoolEducation = [
+  {
+    id: 'class12',
+    level: 'Class XII',
+    year: '2024',
+    score: '95.3%',
+    color: 'blue',
+  },
+  {
+    id: 'class10',
+    level: 'Class X',
+    year: '2022',
+    score: '96.4%',
+    color: 'green',
+  },
+];
