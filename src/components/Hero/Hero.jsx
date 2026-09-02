@@ -60,7 +60,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p className={s.bio} {...(prefersReduced ? {} : fadeUp(0.5))}>
-            Second-year B.Tech IT student at VIT Vellore — crafting performant,
+            Third-year B.Tech IT student at VIT Vellore — crafting performant,
             secure, and user-focused web applications with React, Node.js, and PostgreSQL.
           </motion.p>
 

@@ -10,13 +10,13 @@ const highlights = [
   { color: 'green',  icon: '🔄', title: 'Real-Time Systems',
     desc: 'Experienced building synchronized multi-user applications with precise state management and server-driven logic.' },
   { color: 'yellow', icon: '📈', title: 'Always Learning',
-    desc: 'Second-year student with a builder mindset — shipping real projects while studying at VIT Vellore, CGPA 8.4.' },
+    desc: 'Third-year student with a builder mindset — shipping real projects while studying at VIT Vellore, CGPA 8.34.' },
 ];
 
 const stats = [
-  { value: '8.4',  label: 'CGPA',            color: 'yellow' },
+  { value: '8.34', label: 'CGPA',            color: 'yellow' },
   { value: '2',    label: 'Projects Shipped', color: 'green'  },
-  { value: '2nd',  label: 'Year at VIT',      color: 'blue'   },
+  { value: '3rd',  label: 'Year at VIT',      color: 'blue'   },
 ];
 
 export default function About() {

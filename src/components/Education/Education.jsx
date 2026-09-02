@@ -41,6 +41,7 @@ export default function Education() {
               </div>
               <div className={s.meta}>
                 <span className="tech-badge yellow">{education.period}</span>
+                {education.year && <span className="tech-badge blue">{education.year}</span>}
                 <div className={s.cgpa}>
                   <span className={s.cgpaValue}>{education.cgpa}</span>
                   <span className={s.cgpaLabel}>CGPA</span>

@@ -44,6 +44,7 @@ export const education = {
   institution: 'Vellore Institute of Technology, Vellore',
   degree: 'B.Tech in Information Technology',
   period: '2024 – 2028',
-  cgpa: '8.4',
+  year: '3rd Year',
+  cgpa: '8.34',
   location: 'Vellore, Tamil Nadu',
 };
