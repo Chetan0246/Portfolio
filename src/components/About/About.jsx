@@ -4,13 +4,13 @@ import s from './About.module.css';
 
 const highlights = [
   { color: 'yellow', icon: '🤖', title: 'Applied AI & Agents',
-    desc: 'Experienced in local LLM infrastructure, 10-agent orchestration, and 3-tier resource-aware model routing on constrained hardware.' },
+    desc: 'Focused on local LLM infrastructure, 10-agent orchestration, and 3-tier resource-aware model routing on constrained hardware.' },
   { color: 'red',    icon: '🔒', title: 'Security First',
     desc: 'Passionate about cryptography and zero-knowledge systems — privacy is an architecture decision, not an afterthought.' },
   { color: 'blue',   icon: '⚡', title: 'Full-Stack Fluency',
     desc: 'Comfortable across the entire stack — React/Next.js UIs, PostgreSQL schemas, REST APIs, and real-time Socket.IO backends.' },
   { color: 'green',  icon: '🔄', title: 'Real-Time Systems',
-    desc: 'Experienced building synchronized multi-user applications with server-authoritative state management and distraction tracking.' },
+    desc: 'Built synchronized multi-user applications with server-authoritative state management and distraction tracking.' },
 ];
 
 const stats = [

@@ -33,19 +33,6 @@ const HackerRankIcon = () => (
 
 const ICON_MAP = { github: GitHubIcon, leetcode: LeetCodeIcon, hackerrank: HackerRankIcon };
 
-/* ── Placeholder card (empty state) ────────────────────────── */
-function PlaceholderCard({ label, wide = false }) {
-  return (
-    <motion.div
-      variants={cardVariants}
-      className={`${s.placeholder} ${wide ? s.placeholderWide : ''}`}
-    >
-      <span className={s.placeholderPlus}>+</span>
-      <span className={s.placeholderLabel}>{label}</span>
-    </motion.div>
-  );
-}
-
 /* ── Sub-section wrapper ────────────────────────────────────── */
 function SubSection({ title, color = 'red', children }) {
   return (
@@ -61,6 +48,9 @@ function SubSection({ title, color = 'red', children }) {
 
 /* ── Main component ─────────────────────────────────────────── */
 export default function Experience() {
+  const hasAchievements = achievements.length > 0;
+  const hasCertifications = certifications.length > 0;
+
   return (
     <section id="experience" className={`${s.experience} section`}>
       <div className="container">
@@ -74,9 +64,13 @@ export default function Experience() {
         >
           <p className="section-label">Track record</p>
           <h2 className="section-title">
-            Experience &amp; <span style={{ color: 'var(--red)' }}>Achievements</span>
+            {hasAchievements ? (
+              <>Experience &amp; <span style={{ color: 'var(--red)' }}>Achievements</span></>
+            ) : (
+              <>Profiles &amp; <span style={{ color: 'var(--yellow)' }}>Certifications</span></>
+            )}
           </h2>
-          <div className="section-line red" />
+          <div className={`section-line ${hasAchievements ? 'red' : 'yellow'}`} />
         </motion.div>
 
         {/* ── Coding Profiles ─────────────────────────────── */}
@@ -113,21 +107,20 @@ export default function Experience() {
                 </motion.a>
               );
             })}
-            <PlaceholderCard label="Add a profile" />
           </motion.div>
         </SubSection>
 
         {/* ── Certifications ──────────────────────────────── */}
-        <SubSection title="Certifications" color="yellow">
-          <motion.div
-            className={s.certGrid}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {certifications.length > 0 ? (
-              certifications.map((c) => {
+        {hasCertifications && (
+          <SubSection title="Certifications" color="yellow">
+            <motion.div
+              className={s.certGrid}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {certifications.map((c) => {
                 const isLink = Boolean(c.link);
                 const CardTag = isLink ? motion.a : motion.div;
                 const linkProps = isLink
@@ -156,24 +149,22 @@ export default function Experience() {
                     </div>
                   </CardTag>
                 );
-              })
-            ) : (
-              <PlaceholderCard label="Add your certifications here" />
-            )}
-          </motion.div>
-        </SubSection>
+              })}
+            </motion.div>
+          </SubSection>
+        )}
 
         {/* ── Hackathons & Awards ──────────────────────────── */}
-        <SubSection title="Hackathons &amp; Awards" color="red">
-          <motion.div
-            className={s.achList}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {achievements.length > 0 ? (
-              achievements.map((a) => (
+        {hasAchievements && (
+          <SubSection title="Hackathons &amp; Awards" color="red">
+            <motion.div
+              className={s.achList}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {achievements.map((a) => (
                 <motion.div key={a.id} variants={cardVariants} className={s.achCard}>
                   <div className={s.achIconWrap}>🏆</div>
                   <div className={s.achBody}>
@@ -183,12 +174,10 @@ export default function Experience() {
                   </div>
                   <span className="tech-badge red">{a.position}</span>
                 </motion.div>
-              ))
-            ) : (
-              <PlaceholderCard label="Add hackathons &amp; awards here" wide />
-            )}
-          </motion.div>
-        </SubSection>
+              ))}
+            </motion.div>
+          </SubSection>
+        )}
 
       </div>
     </section>

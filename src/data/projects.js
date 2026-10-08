@@ -15,7 +15,7 @@ export const projects = [
       'Built model lifecycle controls for graceful shutdown, unified-memory reclamation, health checks, endpoint synchronization, and automatic task-based model switching.',
     ],
     architecture: 'A 3-tier resource-aware model architecture dynamically routing tasks across lightweight, general-purpose, and heavy reasoning models on a 16 GB RAM host. Tool capability isolation prevents agents with untrusted web-ingestion tools from accessing host-dangerous execution capabilities, while leveraging SQLite-backed MiniLM embeddings and proactive unified-memory lifecycle controls.',
-    github: 'https://github.com/Chetan0246',
+    github: 'https://github.com/Chetan0246/localharness',
     live: null,
   },
   {
@@ -33,7 +33,7 @@ export const projects = [
       'Integrated Google OAuth authentication using Passport and structured the application with Next.js and a Node.js/Express backend.',
     ],
     architecture: 'The backend is architecturally zero-knowledge. PostgreSQL stores only ciphertext, initialization vectors, and per-recipient encrypted message keys. Public keys sync to the server; private keys live exclusively in IndexedDB on the user\'s device and are never transmitted.',
-    github: 'https://github.com/Chetan0246',
+    github: 'https://github.com/Chetan0246/PrivChat',
     live: null,
   },
   {
@@ -51,7 +51,7 @@ export const projects = [
       'Structured authentication, session persistence, and real-time room coordination using Node.js/Express and MongoDB with Mongoose.',
     ],
     architecture: 'Timer state is owned and broadcast by the server, not clients — preventing drift and ensuring synchronization regardless of join time. Focus scores are computed server-side from Page Visibility events, making them tamper-resistant.',
-    github: 'https://github.com/Chetan0246',
+    github: 'https://github.com/Chetan0246/FocusSync',
     live: null,
   },
 ];
