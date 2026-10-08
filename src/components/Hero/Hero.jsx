@@ -52,7 +52,7 @@ export default function Hero() {
 
           <motion.div className={s.roleRow} {...(prefersReduced ? {} : fadeUp(0.32))}>
             <span className={s.roleDot} aria-hidden="true" />
-            <p className={s.role}>Full-Stack Developer</p>
+            <p className={s.role}>Full-Stack &amp; Applied AI Developer</p>
           </motion.div>
 
           <motion.p className={s.tagline} {...(prefersReduced ? {} : fadeUp(0.42))}>
@@ -60,8 +60,8 @@ export default function Hero() {
           </motion.p>
 
           <motion.p className={s.bio} {...(prefersReduced ? {} : fadeUp(0.5))}>
-            Third-year B.Tech IT student at VIT Vellore — crafting performant,
-            secure, and user-focused web applications with React, Node.js, and PostgreSQL.
+            Third-year B.Tech IT student at VIT Vellore — building resource-aware local AI infrastructure,
+            zero-knowledge systems, and real-time full-stack applications.
           </motion.p>
 
           <motion.div className={s.ctas} {...(prefersReduced ? {} : fadeUp(0.6))}>
@@ -111,7 +111,7 @@ export default function Hero() {
             </div>
             <div className={s.cardInfo}>
               <span className={s.cardName}>Moorthy Chetan</span>
-              <span className={s.cardRole}>Full-Stack Developer</span>
+              <span className={s.cardRole}>Full-Stack &amp; Applied AI</span>
               <div className={s.cardDots} aria-hidden="true">
                 <span style={{ background: 'var(--red)' }} />
                 <span style={{ background: 'var(--green)' }} />
@@ -127,7 +127,7 @@ export default function Hero() {
         <img src="/profile.jpg" alt="Moorthy Chetan" className={s.mobilePhoto} />
         <div className={s.mobileCardInfo}>
           <span className={s.mobileCardName}>Moorthy Chetan</span>
-          <span className={s.mobileCardRole}>Full-Stack Developer</span>
+          <span className={s.mobileCardRole}>Full-Stack &amp; Applied AI</span>
         </div>
       </div>
 

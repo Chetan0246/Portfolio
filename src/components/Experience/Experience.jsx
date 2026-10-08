@@ -127,14 +127,36 @@ export default function Experience() {
             viewport={{ once: true, amount: 0.1 }}
           >
             {certifications.length > 0 ? (
-              certifications.map((c) => (
-                <motion.div key={c.id} variants={cardVariants} className={s.certCard}>
-                  <span className={s.certIcon}>📜</span>
-                  <span className={s.certTitle}>{c.title}</span>
-                  <span className={s.certIssuer}>{c.issuer}</span>
-                  <span className={`tech-badge ${c.color || 'yellow'}`}>{c.year}</span>
-                </motion.div>
-              ))
+              certifications.map((c) => {
+                const isLink = Boolean(c.link);
+                const CardTag = isLink ? motion.a : motion.div;
+                const linkProps = isLink
+                  ? { href: c.link, target: '_blank', rel: 'noopener noreferrer' }
+                  : {};
+
+                return (
+                  <CardTag
+                    key={c.id}
+                    variants={cardVariants}
+                    className={s.certCard}
+                    {...linkProps}
+                    whileHover={{ y: -4 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  >
+                    <div className={s.certHeader}>
+                      <span className={s.certIcon}>📜</span>
+                      {isLink && <span className={s.certArrow}>↗</span>}
+                    </div>
+                    <span className={s.certTitle}>{c.title}</span>
+                    <span className={s.certIssuer}>{c.issuer}</span>
+                    {c.code && <span className={s.certCode}>ID: {c.code}</span>}
+                    <div className={s.certMeta}>
+                      <span className={`tech-badge ${c.color || 'yellow'}`}>{c.year}</span>
+                      {isLink && <span className={s.certLinkText}>Verify Credential</span>}
+                    </div>
+                  </CardTag>
+                );
+              })
             ) : (
               <PlaceholderCard label="Add your certifications here" />
             )}

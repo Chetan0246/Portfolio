@@ -52,3 +52,46 @@ export function FocusSyncPreview() {
     </div>
   );
 }
+
+export function LocalHarnessPreview() {
+  return (
+    <div className={s.harnessWrap}>
+      <div className={s.harnessHeader}>
+        <div className={s.harnessBadge}>
+          <span className={s.harnessPulseDot} />
+          <span>Root Orchestrator · 10 Agents</span>
+        </div>
+      </div>
+
+      <div className={s.tiersRow}>
+        <div className={`${s.tierCard} ${s.tierLight}`}>
+          <span className={s.tierTag}>Tier 1</span>
+          <span className={s.tierName}>Lightweight</span>
+          <span className={s.tierModel}>Fast Sub-agents</span>
+        </div>
+        <div className={`${s.tierCard} ${s.tierGeneral}`}>
+          <span className={s.tierTag}>Tier 2</span>
+          <span className={s.tierName}>General</span>
+          <span className={s.tierModel}>Code &amp; Docs</span>
+        </div>
+        <div className={`${s.tierCard} ${s.tierHeavy}`}>
+          <span className={s.tierTag}>Tier 3</span>
+          <span className={s.tierName}>Reasoning</span>
+          <span className={s.tierModel}>Complex Routing</span>
+        </div>
+      </div>
+
+      <div className={s.harnessFooter}>
+        <div className={s.memPill}>
+          <span className={s.memLabel}>Memory:</span>
+          <span className={s.memVal}>SQLite + MiniLM</span>
+        </div>
+        <div className={s.vramPill}>
+          <span className={s.vramDot} />
+          <span>16GB Host Budget</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+

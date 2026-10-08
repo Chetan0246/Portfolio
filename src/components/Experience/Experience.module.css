@@ -73,12 +73,24 @@
   padding: 22px 20px;
   display: flex; flex-direction: column; gap: 6px;
   box-shadow: var(--shadow-card);
-  transition: transform 250ms ease, box-shadow 250ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  position: relative;
+  text-decoration: none;
 }
-.certCard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px var(--yellow-glow); }
-.certIcon   { font-size: 1.5rem; margin-bottom: 2px; }
-.certTitle  { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+.certCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px var(--yellow-glow);
+  border-color: rgba(255,204,68,0.3);
+}
+.certHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+.certIcon   { font-size: 1.5rem; }
+.certArrow  { font-size: 0.9rem; color: var(--text-muted); transition: color 200ms ease; }
+.certCard:hover .certArrow { color: var(--yellow); }
+.certTitle  { font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
 .certIssuer { font-size: 0.75rem; color: var(--text-muted); }
+.certCode   { font-size: 0.7rem; color: var(--text-muted); font-family: monospace; letter-spacing: 0.05em; }
+.certMeta   { display: flex; align-items: center; justify-content: space-between; margin-top: 6px; }
+.certLinkText { font-size: 0.72rem; color: var(--yellow); font-weight: 600; }
 
 /* ── Achievements ──────────────────────────────────────────── */
 .achList { display: flex; flex-direction: column; gap: 12px; }

@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
-import { PrivChatPreview, FocusSyncPreview } from './ProjectPreview';
+import { PrivChatPreview, FocusSyncPreview, LocalHarnessPreview } from './ProjectPreview';
 import ps from './Preview.module.css';
 import s from './Projects.module.css';
 
-const accentMap = { green: 'var(--green)', blue: 'var(--blue)' };
-const glowMap   = { green: 'var(--green-glow)', blue: 'var(--blue-glow)' };
+const accentMap = { green: 'var(--green)', blue: 'var(--blue)', yellow: 'var(--yellow)' };
+const glowMap   = { green: 'var(--green-glow)', blue: 'var(--blue-glow)', yellow: 'var(--yellow-glow)' };
+const badgeIcon = { green: '🔒', blue: '🎯', yellow: '🤖' };
 
 export default function ProjectCard({ project, onOpen }) {
-  const accentColor = accentMap[project.accent];
-  const glowColor   = glowMap[project.accent];
+  const accentColor = accentMap[project.accent] || 'var(--blue)';
+  const glowColor   = glowMap[project.accent] || 'var(--blue-glow)';
 
   return (
     <motion.article
@@ -25,6 +26,7 @@ export default function ProjectCard({ project, onOpen }) {
 
       {/* Abstract Preview Panel */}
       <div className={`${s.preview} ${ps[project.previewType]}`}>
+        {project.previewType === 'localharness' && <LocalHarnessPreview />}
         {project.previewType === 'privchat'   && <PrivChatPreview />}
         {project.previewType === 'focussync'  && <FocusSyncPreview />}
       </div>
@@ -34,7 +36,7 @@ export default function ProjectCard({ project, onOpen }) {
         <div className={s.titleRow}>
           <h3 className={s.title}>{project.name}</h3>
           <span className={s.accentBadge} style={{ background: `${accentColor}20`, color: accentColor, borderColor: `${accentColor}40` }}>
-            {project.accent === 'green' ? '🔒' : '🎯'}
+            {badgeIcon[project.accent] || '🚀'}
           </span>
         </div>
         <p className={s.tagline}>{project.tagline}</p>

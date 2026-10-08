@@ -6,8 +6,8 @@ const RESUME_URL = '/resume.pdf';
 
 const highlights = [
   { icon: '🎓', label: 'Education',  value: 'B.Tech IT · VIT Vellore · 3rd Year · CGPA 8.34' },
-  { icon: '⚡', label: 'Stack',      value: 'React · Next.js · Node.js · PostgreSQL · Socket.IO' },
-  { icon: '🔒', label: 'Speciality', value: 'End-to-end encryption · Real-time systems · Full-stack' },
+  { icon: '⚡', label: 'Stack',      value: 'Java · Python · Node.js · React · Next.js · PostgreSQL · llama.cpp' },
+  { icon: '🤖', label: 'Focus',      value: 'Applied AI Orchestration · Zero-Knowledge · Real-Time Systems' },
   { icon: '🏆', label: 'Academics',  value: 'Class XII — 95.3%  ·  Class X — 96.4%' },
 ];
 
@@ -82,7 +82,7 @@ export default function Resume() {
             </motion.div>
 
             <motion.p variants={fadeUpVariant} className={s.updated}>
-              Last updated · September 2026
+              Last updated · October 2026
             </motion.p>
           </motion.div>
 

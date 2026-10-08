@@ -10,9 +10,13 @@ const item = {
 };
 
 const ICONS = {
-  'REST APIs':      '🔗',
-  'Web Crypto API': '🔐',
-  'IndexedDB':      '💾',
+  'REST APIs':             '🔗',
+  'Web Crypto API':        '🔐',
+  'IndexedDB':             '💾',
+  'llama.cpp':             '🦙',
+  'sentence-transformers': '🧬',
+  'Local LLMs':            '🤖',
+  'Agentic AI':            '⚡',
 };
 
 export default function Skills() {

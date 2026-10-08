@@ -3,19 +3,19 @@ import { fadeUpVariant, staggerContainer } from '../../hooks/useAnimations';
 import s from './About.module.css';
 
 const highlights = [
+  { color: 'yellow', icon: '🤖', title: 'Applied AI & Agents',
+    desc: 'Experienced in local LLM infrastructure, 10-agent orchestration, and 3-tier resource-aware model routing on constrained hardware.' },
   { color: 'red',    icon: '🔒', title: 'Security First',
     desc: 'Passionate about cryptography and zero-knowledge systems — privacy is an architecture decision, not an afterthought.' },
   { color: 'blue',   icon: '⚡', title: 'Full-Stack Fluency',
-    desc: 'Comfortable across the entire stack — React UIs, PostgreSQL schemas, REST APIs, and real-time Socket.IO backends.' },
+    desc: 'Comfortable across the entire stack — React/Next.js UIs, PostgreSQL schemas, REST APIs, and real-time Socket.IO backends.' },
   { color: 'green',  icon: '🔄', title: 'Real-Time Systems',
-    desc: 'Experienced building synchronized multi-user applications with precise state management and server-driven logic.' },
-  { color: 'yellow', icon: '📈', title: 'Always Learning',
-    desc: 'Third-year student with a builder mindset — shipping real projects while studying at VIT Vellore, CGPA 8.34.' },
+    desc: 'Experienced building synchronized multi-user applications with server-authoritative state management and distraction tracking.' },
 ];
 
 const stats = [
   { value: '8.34', label: 'CGPA',            color: 'yellow' },
-  { value: '2',    label: 'Projects Shipped', color: 'green'  },
+  { value: '3',    label: 'Projects Shipped', color: 'green'  },
   { value: '3rd',  label: 'Year at VIT',      color: 'blue'   },
 ];
 
@@ -47,13 +47,13 @@ export default function About() {
           <div className={s.introBadge}>👋</div>
           <div>
             <p className={s.introText}>
-              I'm <strong>Moorthy Chetan</strong>, a Full-Stack Developer and second-year B.Tech Information
-              Technology student at <strong>VIT Vellore</strong>. I build web products that are genuinely
-              secure, performant, and thoughtfully designed.
+              I'm <strong>Moorthy Chetan</strong>, a Full-Stack &amp; Applied AI Developer and third-year B.Tech Information
+              Technology student at <strong>VIT Vellore</strong> (CGPA: 8.34). I build software that is genuinely
+              secure, performant, and resource-aware.
             </p>
             <p className={s.introText} style={{ marginTop: 12 }}>
-              My work spans real-time communication systems, cryptographic architectures, and collaborative
-              tools — areas where I believe great engineering and great UX must coexist.
+              My work spans local AI agent orchestration, cryptographic zero-knowledge architectures, and synchronized real-time
+              collaborative platforms — bridging robust systems engineering with seamless user experiences.
             </p>
           </div>
         </motion.div>

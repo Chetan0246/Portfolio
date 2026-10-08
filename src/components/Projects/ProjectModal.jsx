@@ -17,10 +17,10 @@ export default function ProjectModal({ project, onClose }) {
     return () => { document.removeEventListener('keydown', handleKey); document.body.style.overflow=''; };
   }, [handleKey]);
 
-  const accent = project.accent==='green' ? 'var(--green)' : 'var(--blue)';
-  const glow   = project.accent==='green' ? 'var(--green-glow)' : 'var(--blue-glow)';
-  const dim    = project.accent==='green' ? 'var(--green-dim)' : 'var(--blue-dim)';
-  const label  = project.accent==='green' ? '🔒 Security' : '🎯 Productivity';
+  const accent = project.accent === 'green' ? 'var(--green)' : project.accent === 'yellow' ? 'var(--yellow)' : 'var(--blue)';
+  const glow   = project.accent === 'green' ? 'var(--green-glow)' : project.accent === 'yellow' ? 'var(--yellow-glow)' : 'var(--blue-glow)';
+  const dim    = project.accent === 'green' ? 'var(--green-dim)' : project.accent === 'yellow' ? 'var(--yellow-dim)' : 'var(--blue-dim)';
+  const label  = project.accent === 'green' ? '🔒 Security' : project.accent === 'yellow' ? '🤖 AI Orchestration' : '🎯 Productivity';
 
   return createPortal(
     <AnimatePresence>

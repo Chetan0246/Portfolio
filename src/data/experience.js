@@ -1,7 +1,17 @@
 // ─── Certifications ──────────────────────────────────────────────────────────
-// Add your certifications here as you earn them.
-// Example: { id: 1, title: 'AWS Certified Developer', issuer: 'Amazon', year: '2025', link: '#', color: 'yellow' }
-export const certifications = [];
+export const certifications = [
+  {
+    id: 'ibm-agentic-ai',
+    title: 'Building Agents with Agentic AI',
+    issuer: 'IBM Career Education Program',
+    code: 'CEAAI1IN',
+    year: '2026',
+    date: 'July 15, 2026',
+    link: 'https://courses.ibmcep.cognitiveclass.ai/certificates/dd3c5a94dfca4384bbfbc24bd5c958f5',
+    pdfUrl: '/IBMCE_Certificate_Building_Agents_with_Agentic_AI.pdf',
+    color: 'yellow',
+  },
+];
 
 // ─── Coding Profiles ─────────────────────────────────────────────────────────
 export const codingProfiles = [

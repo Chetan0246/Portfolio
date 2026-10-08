@@ -143,6 +143,8 @@ input, textarea { font: inherit; }
 .btn-ghost:hover { background: var(--blue); color: #fff; transform: none; }
 .btn-ghost.green { background: var(--green-dim); color: var(--green); border-color: var(--green); }
 .btn-ghost.green:hover { background: var(--green); color: #0a0a0f; }
+.btn-ghost.yellow { background: var(--yellow-dim); color: var(--yellow); border-color: var(--yellow); }
+.btn-ghost.yellow:hover { background: var(--yellow); color: #0a0a0f; }
 
 /* ─── Card Base ─────────────────────────────────────── */
 .card {

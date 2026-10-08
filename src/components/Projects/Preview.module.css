@@ -71,6 +71,124 @@
 .leaderFill { height: 100%; background: var(--blue); border-radius: 2px; animation: barGrow 2s ease-in-out infinite alternate; }
 .leaderScore { font-size: 0.6rem; color: var(--text-muted); font-weight: 600; }
 
+/* ── LocalHarness Preview ───────────────────────────────────────── */
+.localharness {
+  background: linear-gradient(145deg, #161204 0%, #0c0902 100%);
+  border-bottom: 1px solid rgba(255,204,68,0.14);
+}
+.harnessWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.harnessHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.harnessBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,204,68,0.12);
+  border: 1px solid rgba(255,204,68,0.25);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--yellow);
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+.harnessPulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 8px var(--yellow);
+  animation: dotPulse 1.8s infinite;
+}
+.tiersRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+.tierCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+.tierCard:hover {
+  transform: translateY(-2px);
+}
+.tierLight  { border-top: 2px solid var(--green); }
+.tierGeneral{ border-top: 2px solid var(--blue); }
+.tierHeavy  { border-top: 2px solid var(--yellow); }
+
+.tierTag {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.tierName {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+.tierModel {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.harnessFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+.memPill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.62rem;
+  color: var(--text-secondary);
+}
+.memLabel {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.memVal {
+  color: var(--yellow);
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+.vramPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+.vramDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
 /* ── Keyframes ─────────────────────────────────────────────────── */
 @keyframes lockPulse {
   0%,100% { filter: drop-shadow(0 0 4px rgba(68,221,136,0.4)); }
