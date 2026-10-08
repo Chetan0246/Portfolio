@@ -58,6 +58,7 @@
   color: var(--text-secondary);
   border-radius: var(--radius-md);
   transition: color var(--tr-normal), background var(--tr-normal);
+  white-space: nowrap;
 }
 .link:hover { color: var(--text-primary); background: var(--border-subtle); }
 .active { color: var(--text-primary) !important; }
@@ -149,6 +150,10 @@
 .blue   { background: var(--blue);   box-shadow: 0 0 6px var(--blue-glow); }
 .green  { background: var(--green);  box-shadow: 0 0 6px var(--green-glow); }
 .yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow-glow); }
+
+@media (max-width: 1040px) {
+  .link { padding: 6px 10px; font-size: 0.82rem; }
+}
 
 @media (max-width: 860px) {
   .links { display: none; }

@@ -7,9 +7,9 @@ const NAV_LINKS = [
   { id: 'hero',       label: 'Home',       dot: 'blue'   },
   { id: 'about',      label: 'About',      dot: 'red'    },
   { id: 'skills',     label: 'Skills',     dot: 'blue'   },
-  { id: 'projects',   label: 'Projects',   dot: 'green'  },
-  { id: 'experience', label: 'Experience', dot: 'red'    },
-  { id: 'education',  label: 'Education',  dot: 'yellow' },
+  { id: 'projects',   label: 'Projects',                 dot: 'green'  },
+  { id: 'experience', label: 'Profiles & Certifications', dot: 'yellow' },
+  { id: 'education',  label: 'Education',                dot: 'yellow' },
   { id: 'resume',     label: 'Résumé',     dot: 'red'    },
   { id: 'contact',    label: 'Contact',    dot: 'yellow' },
 ];
